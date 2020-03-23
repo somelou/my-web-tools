@@ -63,7 +63,6 @@ export class JikePostItemComponent implements OnInit {
   }
 
   isHaveMedia() {
-    console.log(this.value.pictures.length);
     if (this.value.pictures.length !== 0) {
       return true;
     }

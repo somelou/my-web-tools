@@ -1,27 +1,33 @@
-# MyWebTools
+# 即刻分享卡片
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+想拥有即刻时代的分享卡片吗? (*不想*)
 
-## Development server
+填入数据,即刻拥有!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**你可以[web.somelou.xyz](https://web.somelou.xyz/jike/card)查看效果**
 
-## Code scaffolding
+## 项目说明
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+项目使用 [Angular CLI](https://github.com/angular/angular-cli) (version 8.1.0)
 
-## Build
+本来想做全自动的,但是因为技术水平限制,只能做成填数据的版本了.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+用户头像可以在jellow下载后再上传
 
-## Running unit tests
+服务器原因,你可能会遇到加载缓慢的情况,可以尝试刷新.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 已知问题
 
-## Running end-to-end tests
+- [ ] 夸克浏览器|小米浏览器下无法正常下载图片
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## TODO
 
-## Further help
+- [ ] 输入动态id生成二维码
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [ ] 点开大图查看|长按保存
+
+- [ ] 长图/GIF/视频显示处理
+
+- [ ] 转发评论
+
+- [ ] 转发动态
