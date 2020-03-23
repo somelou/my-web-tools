@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UploadFilter, UploadFile } from 'ng-zorro-antd';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Square } from 'src/app/utils/Square';
 
 @Component({
   selector: 'app-upload-picture',
@@ -73,12 +74,12 @@ export class UploadPictureComponent implements OnInit {
       return;
     }
     this._getImageInfo(url, (width, height) => {
-      if (width !== height) {
+      if (Square.isApproximateSquare(width, height)) {
+        this.imageChange(url);
+      } else {
         this.showCropper = true;
         this.file = file;
         this.visible = true;
-      } else {
-        this.imageChange(url);
       }
     });
   }
