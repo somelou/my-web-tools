@@ -1,0 +1,48 @@
+.bar {
+  display: flex;
+  padding: 8px;
+  font-size: x-large;
+}
+
+.bar-item {
+  flex: 1;
+}
+
+.count-number {
+  padding: 6px;
+  color: #b0b0b0;
+}
+
+a {
+  color: #b0b0b0;
+}
+
+:host ::ng-deep .anticon {
+  border-radius: 50%;
+  padding: 8px;
+  background-color: #424242;
+  color: #b0b0b0;
+  stroke: #b0b0b0;
+  stroke-width: 30;
+}
+
+:host ::ng-deep .bar-item-selected {
+  color: #E53935; 
+  stroke: #E53935;
+}
+
+@media screen and (max-width: 768px) {
+
+  .bar {
+    padding: 4px 0;
+  }
+
+  .count-number {
+    font-size: initial;
+  }
+
+  :host ::ng-deep .anticon {
+    font-size: large;
+    padding: 6px;
+  }
+}

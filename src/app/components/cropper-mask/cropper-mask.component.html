@@ -1,0 +1,31 @@
+<div class="mask-overlay" [ngStyle]="{'width': visible?'100%':'0'}">
+  <div class="mask-content-body" [ngClass]="{'mask-content-body-open': visible }">
+    <div class="mask-header">
+      <div class="operation-header">
+        <button class="opeartion-button" nz-button nzGhost nzType="link" (click)="close()">
+          <span>取消</span>
+        </button>
+        <button class="opeartion-button" nz-button nzGhost (click)="submit()">
+          <span>确认</span>
+        </button>
+      </div>
+    </div>
+    <div class="mask-body">
+      <div class="image-cropper-container">
+        <image-cropper
+          id="cropper"
+          class="image-cropper"
+          [imageFile]="file"
+          [cropperMinWidth]="256" 
+          [hideResizeSquares]="isPhone"
+          format="png"
+          (imageCropped)="imageCropped($event)" 
+          (loadImageFailed)="loadImageFailed()"
+          (imageLoaded)="imageLoaded()"
+          (cropperReady)="cropperReady($event)"
+        ></image-cropper>
+        <nz-spin *ngIf="loading" style="position: absolute;" nzSimple [nzSize]="'large'"></nz-spin>
+      </div>
+    </div>
+  </div>
+</div>

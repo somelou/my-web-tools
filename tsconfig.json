@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -10,7 +11,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    /**
+      * angularx-qrcode(1.7.0-b5)插件 [usesvg]="true" 时直接用html2canvas导出会引发错误
+      * 错误原因由旧版本不兼容es2015引起
+      * 插件2.x版本虽修复此问题 但因2.x版本去除了svg选项,导出二维码清晰度不高
+      * 故将 target 改为 es5
+      */
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],

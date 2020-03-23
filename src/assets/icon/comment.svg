@@ -1,0 +1,9 @@
+<!-- <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> -->
+<!DOCTYPE xml>
+<svg t="1584718386724" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3480" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+    <defs>
+        <style type="text/css"></style>
+    </defs>
+    <path d="M96 224H64h32z m832 0h-32 32z m0 448h32-32zM800 96v32-32zM224 96V64v32z m96 704v-32h-10.24l-8.352 5.952L320 800z m-173.408 123.84L128 897.856l18.592 26.048zM800 800v-32 32z m-96-416a32 32 0 1 0 0-64v64z m-384-64a32 32 0 1 0 0 64v-64z m256 256a32 32 0 1 0 0-64v64z m-256-64a32 32 0 1 0 0 64v-64zM64 224v673.824h64V224H64z m832 0v448h64V224h-64z m-96-160H224v64h576V64zM301.408 773.952L128 897.792l37.184 52.096 173.44-123.84-37.216-52.096zM800 768H320v64h480v-64z m160-544a160 160 0 0 0-160-160v64a96 96 0 0 1 96 96h64zM128 224a96 96 0 0 1 96-96V64a160 160 0 0 0-160 160h64zM64 897.824c0 52.064 58.848 82.336 101.184 52.064L128 897.824H64zM896 672a96 96 0 0 1-96 96v64a160 160 0 0 0 160-160h-64z m-192-352H320v64h384v-64z m-128 192h-256v64h256v-64z" p-id="3482"></path>
+</svg>

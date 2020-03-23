@@ -1,0 +1,43 @@
+<div class="form">
+  <div class="jike-form-label">
+    <label>即刻昵称</label>
+  </div>
+  <input class="jike-text-input" nz-input placeholder="昵称：(｡･∀･)ﾉﾞ" [(ngModel)]="value.user.screenName"
+    nzSize="large" />
+  <div class="jike-form-label">
+    <label>圈子</label>
+    <label class="extra-info">不填那当然就不显示啦</label>
+  </div>
+  <input class="jike-text-input" nz-input placeholder="圈子: 不要自己编一个哦" [(ngModel)]="value.topic.content" nzSize="large">
+  <div class="jike-form-label">
+    <label>动态内容</label>
+    <label class="extra-info">对准右下角可以上下拉动</label>
+  </div>
+  <textarea class="jike-text-input" rows="3" nz-input placeholder="分享你的想法?" [(ngModel)]="value.content"></textarea>
+  <div class="double-column">
+    <div class="left-column">
+      <div class="jike-form-label">
+        <label>选择头像</label>
+      </div>
+      <app-upload-picture label="选择头像" [crop]="true" (urlChange)="avatarImageChange($event)"></app-upload-picture>
+    </div>
+    <div class="right-column">
+      <div class="jike-form-label">
+        <label>动态图片</label>
+        <label class="extra-info">可选</label>
+      </div>
+      <app-upload-picture label="添加图片" [crop]="false" (urlChange)="contentPictureChange($event)"></app-upload-picture>
+    </div>
+  </div>
+  <div class="double-column">
+    <div class="left-column">
+      <div class="jike-form-label">
+        <label>发表时间</label>
+      </div>
+      <nz-date-picker [(ngModel)]="value.createdAt" nzSize="large" placeholder="这个也能选"></nz-date-picker>
+    </div>
+    <div class="right-column">
+      <button class="jike-text-input" nz-button nzGhost (click)="sharePoster()">下载卡片</button>
+    </div>
+  </div>
+</div>

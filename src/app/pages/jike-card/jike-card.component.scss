@@ -1,0 +1,60 @@
+.title {
+  font-family: Bello;
+  font-size: x-large;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-body {
+  background-color: #000000;
+  height: fit-content;
+  padding: 16px;
+}
+
+.card-interval {
+  overflow: hidden;
+  position: relative;
+  width: 40%;
+  padding: 8px;
+  margin: auto;
+}
+
+.card-item{
+  overflow: hidden;
+  height: max-content;
+  padding: 16px;
+  margin: 8px auto;
+  max-width: 600px;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+}
+
+app-jike-post-item {
+  box-shadow: 0 0 16px rgba(165, 151, 25, 0.616);
+  display: flex;
+  width: fit-content;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card-body {
+    display: block;
+    padding: 8px;
+  }
+
+  .card-interval {
+    padding: 4px;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .card-item {
+    width: 100%;
+    padding: 8px;
+  }
+
+  app-jike-post-item {
+    margin: auto;
+  }
+
+}

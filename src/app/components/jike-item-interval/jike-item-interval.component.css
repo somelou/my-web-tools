@@ -1,0 +1,18 @@
+span {
+  color: #b0b0b0;
+  margin: 4px;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+.item-interval {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  span {
+    font-size: 0.8rem;
+  }
+}

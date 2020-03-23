@@ -1,0 +1,13 @@
+<nz-upload
+    nzAction=""
+    [(nzFileList)]="fileList"
+    [nzFilter]="filters"
+    [nzShowUploadList]="false"
+    (nzChange)="handleChange($event)"
+    >
+    <button nz-button nzSize="large">
+        <i nz-icon nzType="upload"></i>
+        <span>{{ label }}</span>
+    </button>
+</nz-upload>
+<app-cropper-mask *ngIf="showCropper" [(visible)]="visible" [file]="file" (fileChange)="imageChange($event)"></app-cropper-mask>

@@ -1,0 +1,112 @@
+.mask-overlay {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.mask-content-body {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: auto;
+  background-color: #000000;
+  background-clip: padding-box;
+  border: 0;
+  pointer-events: none;
+  position: static;
+}
+
+.mask-content-body-open {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.mask-header {
+  position: relative;
+  padding: 16px 24px;
+}
+
+.mask-body {
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+
+  height: calc(100% - 108px);
+  overflow: auto;
+}
+
+.operation-header {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+
+  .opeartion-button {
+    width: 25%;
+    max-width: 300px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    padding: 8px;
+    height: auto;
+  }
+}
+
+.image-cropper-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px 32px;
+
+  .image-cropper {
+    padding: 0;
+    width: 100%;
+    opacity: 0.1;
+  }
+}
+
+:host ::ng-deep .overlay {
+  width: inherit !important;
+  margin-left: 0 !important;
+  height: -webkit-fill-available !important;
+}
+
+// :host ::ng-deep .cropper {
+//   margin-left: 0 !important;
+//   max-width: 100%;
+//   max-height: 100%;
+// }
+
+
+@media screen and (max-width: 768px) {
+  .operation-header {
+    justify-content: space-between;
+    margin: 8px;
+
+    .opeartion-button {
+      font-size: 14px;
+      padding: 0 15px;
+      height: 32px;
+    }
+  }
+
+  .mask-body {
+    padding: 0;
+    height: calc(100% - 64px);
+  }
+
+  .image-cropper-container {
+    margin: 0 8px 8px;
+    padding: 0;
+
+    .image-cropper {
+      overflow-y: scroll;
+      display: block;
+      position: static;
+      height: auto;
+    }
+  }
+}

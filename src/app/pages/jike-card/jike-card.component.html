@@ -1,0 +1,19 @@
+<div *ngIf="!loading" class="card-body">
+  <!-- <h2 class="title">即刻分享卡片</h2> -->
+  <div class="card-item">
+    <div class="title bello">Jellow Card</div>
+  </div>
+  <div class="card-item">
+    <app-jike-input-form [(value)]="postData"></app-jike-input-form>
+    <app-operate-bar></app-operate-bar>
+  </div>
+  <div class="card-item">
+    <app-jike-post-item [value]="postData" [uri]="uri" [water]="water"></app-jike-post-item>
+  </div>
+  <div class="card-interval">
+    <app-jike-item-interval value="上次读到这里"></app-jike-item-interval>
+  </div>
+  <div class="card-item">
+    <app-jike-footer></app-jike-footer>
+  </div>
+</div>

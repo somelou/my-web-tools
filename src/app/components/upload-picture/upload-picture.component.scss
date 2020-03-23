@@ -1,0 +1,21 @@
+:host ::ng-deep .ant-btn {
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px 0;
+  height: auto;
+}
+
+:host ::ng-deep .ant-upload.ant-upload-select {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  :host ::ng-deep .ant-btn {
+    height: 40px;
+    padding: 6px 11px;
+    font-size: 16px;
+    margin: 4px 0px 8px 0px;
+  }
+}

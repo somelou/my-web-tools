@@ -1,0 +1,54 @@
+<div id="poster" class="background" (click)="showFullScreen()">
+  <div *ngIf="water" class="water">
+    <span>@somelou</span>
+  </div>
+  <app-dark-yellow-dot></app-dark-yellow-dot>
+
+  <div class="info-background">
+    <div style="padding: 0 5.5%; transform: translateY(-30%);">
+      <!-- <div class="box"> -->
+        <img class="jike-avatar" [src]="sanitizer.bypassSecurityTrustUrl(value.user.avatarImage.picUrl)">
+      <!-- </div> -->
+    </div>
+    <div style="padding: 0 6.5%; transform: translateY(0%); margin: -4% 0 2% 0;">
+      <div class="create-bar">
+        <div class="author">
+          <span class="username">{{ value.user.screenName.length !==0 ? value.user.screenName : '大学杨超越' }}</span>
+          <span class="description-content">{{ cardType }}</span>
+        </div>
+        <span *ngIf="value.topic && value.topic.content.length !== 0" class="topic">{{ value.topic.content }}</span>
+      </div>
+    </div>
+
+    <div *ngIf="value.pictures.length !== 0">
+      <img [src]="sanitizer.bypassSecurityTrustUrl(value.pictures[0].picUrl)" style="width: 100%; object-fit: scale-down;">
+    </div>
+    <div style="padding: 0 6.5%;">
+      <div class="time-bar">
+        <span *ngIf="thisYear" class="description-content">{{ value.createdAt | date: 'MM/dd' }}</span>
+        <span *ngIf="!thisYear" class="description-content">{{ value.createdAt | date: 'yyyy/MM/dd' }}</span>
+      </div>
+      <div class="content-bar">
+        <span *ngIf="haveMedia" class="content" style="font-size: 1rem;">{{ value.content }}</span>
+        <span *ngIf="!haveMedia" [ngStyle]="{'font-size': 'contentFontSize'}" class="content">{{ value.content }}</span>
+      </div>
+      <div class="extra-bar" [ngStyle]="{'padding-bottom': haveMedia ? '0':'8%'}">
+        <span class="decorate">/////</span>
+      </div>
+      <div *ngIf="false" class="qrcode-bar">
+        <div class="caption">
+          <span class="description-content">长按扫码</span>
+          <span class="description-content">查看详情</span>
+        </div>
+        <div id="qrcode" class="qrcode">
+          <app-qrcode [data]="uri"></app-qrcode>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bottom-background">
+    <span class="app-info bello">Jellow</span>
+  </div>
+</div>

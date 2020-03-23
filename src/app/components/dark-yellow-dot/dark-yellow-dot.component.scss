@@ -1,0 +1,15 @@
+.dot-bar {
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: repeat(17, 5.88%);
+  place-items: center;
+}
+
+.dark-yellow-dot {
+  background-color: rgba(184, 157, 90, 0.123);
+  height: 20%;
+  width: 20%;
+  margin: 50%;
+  border-radius: 50%;
+  place-items: center;
+}
