@@ -1,5 +1,6 @@
 import { QRCodeFactory } from './QRCodeFactory';
 import html2canvas from 'html2canvas';
+import { environment } from 'src/environments/environment';
 
 export class Poster {
 
@@ -18,7 +19,7 @@ export class Poster {
      */
     sharePoster() {
         this._setScroll2Top();
-        if (this.qrcodeId) {
+        if (environment.qrcode) {
             QRCodeFactory.makeQRCode(this.qrcodeId);
         }
         html2canvas(document.getElementById(this.canvasId), {

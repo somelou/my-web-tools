@@ -31,7 +31,7 @@ export class JikeInputFormComponent implements OnInit {
   }
 
   sharePoster() {
-    const poster = new Poster(this.canvasId);
+    const poster = new Poster(this.canvasId, this.qrcodeId);
     poster.sharePoster();
   }
 

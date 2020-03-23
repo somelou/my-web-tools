@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { JikePostPojo } from 'src/app/entity/jike-post';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 const JIKE_CARD_TYPE = {
   ORIGINAL_POST: '发表了一条动态',
@@ -16,6 +17,7 @@ export class JikePostItemComponent implements OnInit {
 
   canvasId = 'poster';
   qrcodeId = 'qrcode';
+  isShowQrcode: boolean; // 是否显示二维码
 
   @Input()
   water = false;
@@ -34,7 +36,9 @@ export class JikePostItemComponent implements OnInit {
 
   isShow = false; // 点开大图
 
-  constructor(public sanitizer: DomSanitizer, private snackBar: MatSnackBar) { }
+  constructor(public sanitizer: DomSanitizer, private snackBar: MatSnackBar) {
+    this.isShowQrcode = environment.qrcode;
+  }
 
   ngOnInit() {
     this.value.pictures = [];
