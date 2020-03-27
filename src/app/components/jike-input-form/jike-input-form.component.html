@@ -24,7 +24,7 @@
     <div class="right-column">
       <div class="jike-form-label">
         <label>动态图片</label>
-        <label class="extra-info">可选</label>
+        <label class="extra-info click-extra-info" (click)="deletePicture()">移除</label>
       </div>
       <app-upload-picture label="添加图片" [formats]="pictureFormates" [crop]="false" (urlChange)="contentPictureChange($event)"></app-upload-picture>
     </div>

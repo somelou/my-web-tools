@@ -56,4 +56,12 @@ export class JikeInputFormComponent implements OnInit, OnChanges {
     this.value.pictures = [{ picUrl: $event }];
   }
 
+  /**
+   * 删除动态图片
+   */
+  deletePicture() {
+    this.value.pictures = [];
+  }
+
+
 }
