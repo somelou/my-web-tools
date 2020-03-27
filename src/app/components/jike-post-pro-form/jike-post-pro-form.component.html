@@ -1,0 +1,25 @@
+<div>
+  <div class="jike-form-label item-header">
+    <label>Pro模式</label>
+    <label class="extra-info">取消👍可以关闭此选项</label>
+  </div>
+  <div class="jike-form-label">
+    <label>动态/评论ID</label>
+    <label class="extra-info">清空内容后不显示二维码</label>
+  </div>
+  <nz-input-group [nzSuffix]="suffixTemplate">
+    <input class="jike-text-input" nz-input placeholder="输入完整url或者仅id" [ngModel]="value"
+      (ngModelChange)="inputChange($event)" nzSize="large">
+  </nz-input-group>
+  <ng-template #suffixTemplate
+      ><i
+        nz-icon
+        nz-tooltip
+        class="ant-input-clear-icon"
+        nzTheme="fill"
+        nzType="close-circle"
+        *ngIf="value"
+        (click)="value = null"
+      ></i
+    ></ng-template>
+</div>

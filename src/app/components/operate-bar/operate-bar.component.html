@@ -1,15 +1,8 @@
 <div class="bar">
-  <ng-container *ngFor="let operation of operations">
-    <div class="bar-item" [ngStyle]="{'text-align': operation.position}" (click)="toast()">
-      <i nz-icon [ngClass]="{'bar-item-selected': operation.isSelected}" [nzType]="operation.value" nzTheme="outline"></i>
+  <ng-container *ngFor="let operation of operations; let i = index;">
+    <div class="bar-item" [ngStyle]="{'text-align': operation.position}">
+      <i nz-icon [ngClass]="{'bar-item-selected': operation.isSelected}" [nzType]="operation.value" nzTheme="outline" (click)="clickItem(i)"></i>
       <span *ngIf="operation.label" class="count-number">{{ operation.label }}</span>
-      <!-- <ng-container *ngIf="operation.isSelected; else elseTemplate">
-        <i nz-icon style="color: #E53935; stroke: #E53935;" [nzType]="operation.value" nzTheme="outline"></i>
-        <span *ngIf="operation.label" class="count-number">{{ operation.label }}</span>
-      </ng-container>
-      <ng-template #elseTemplate>
-        <i nz-icon [nzType]="operation.value" nzTheme="outline"></i>
-      </ng-template> -->
     </div>
   </ng-container>
 </div>

@@ -20,7 +20,7 @@ export class JikePostItemComponent implements OnInit {
   isShowQrcode: boolean; // 是否显示二维码
 
   @Input()
-  water = false;
+  mark = false; // gif|长图标记
 
   @Input()
   uri: string;

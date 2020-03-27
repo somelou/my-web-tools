@@ -12,9 +12,11 @@ export class JikeCardComponent implements OnInit {
   uriPrefix = 'https://m.okjike.com/originalPosts/';
 
   postData: JikePostPojo;
-  uri: string;
   loading = true;
-  water = false;
+  mark = false;
+
+  liking = true;
+  uri: string;
 
   constructor(public http: HttpClient) { }
 
@@ -40,7 +42,7 @@ export class JikeCardComponent implements OnInit {
   }
 
   private _getUri(postId: string) {
-    return this.uriPrefix + postId;
+    return postId;
   }
 
 }

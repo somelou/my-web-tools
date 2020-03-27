@@ -4,11 +4,14 @@
     <div class="title bello">Jellow Card</div>
   </div>
   <div class="card-item">
-    <app-jike-input-form [(value)]="postData"></app-jike-input-form>
-    <app-operate-bar></app-operate-bar>
+    <app-jike-input-form [(value)]="postData" [uri]="uri"></app-jike-input-form>
+    <app-operate-bar [(liking)]="liking"></app-operate-bar>
   </div>
-  <div class="card-item">
-    <app-jike-post-item [value]="postData" [uri]="uri" [water]="water"></app-jike-post-item>
+  <div *ngIf="liking" class="card-item">
+    <app-jike-post-pro-form [(value)]="uri"></app-jike-post-pro-form>
+  </div>
+  <div id="display-card" class="card-item">
+    <app-jike-post-item [value]="postData" [uri]="uri" [mark]="mark"></app-jike-post-item>
   </div>
   <div class="card-interval">
     <app-jike-item-interval value="上次读到这里"></app-jike-item-interval>

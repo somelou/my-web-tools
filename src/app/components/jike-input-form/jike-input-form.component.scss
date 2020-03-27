@@ -2,20 +2,6 @@
   padding: 8px;
 }
 
-.jike-text-input {
-  width: 100%;
-  caret-color: #01a9f4;
-  font-size: 1.1rem;
-  margin: 8px 0;
-  border-radius: 8px;
-  padding: 8px;
-  height: auto;
-}
-
-:host ::ng-deep .jike-text-input:focus {
-  box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
-}
-
 :host ::ng-deep .ant-calendar-picker-input.ant-input {
   width: 100%;
   font-size: 1.1rem;
@@ -31,27 +17,6 @@
 
 :host ::ng-deep .ant-calendar-picker {
   width: 100%;
-}
-
-.jike-form-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-top: 4px;
-
-  label {
-    font-weight: 800;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #b0b0b0;
-  }
-
-  .extra-info {
-    font-weight: 500;
-    font-size: 0.9rem;
-    float: right;
-  }
-
 }
 
 .double-column {
@@ -74,30 +39,18 @@
     padding: 0px;
   }
 
-  :host ::ng-deep .jike-text-input {
-    height: 40px;
-    padding: 6px 11px;
-    font-size: 16px;
-    margin: 4px 0px 8px 0px;
-  }
+  // :host ::ng-deep .jike-text-input {
+  //   height: 40px;
+  //   padding: 6px 11px;
+  //   font-size: 16px;
+  //   margin: 4px 0px 8px 0px;
+  // }
 
   :host ::ng-deep .ant-calendar-picker-input.ant-input {
     height: 40px;
     padding: 6px 11px;
     font-size: 16px;
     margin: 4px 0px 8px 0px;
-  }
-
-  .jike-form-label {
-
-    label {
-      font-size: 1.1rem;
-    }
-
-    .extra-info {
-      font-size: 0.8rem;
-    }
-
   }
 
   .double-column {

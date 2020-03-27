@@ -8,6 +8,11 @@ export class Poster {
     qrcodeId: string;
     canvasId: string;
 
+    /**
+     * 是否生成二维码|default: environment.qrcode
+     */
+    isMakeQRCode = environment.qrcode;
+
     constructor(canvasId: string, qrcodeId?: string, prefix = 'jike_card_') {
         this.qrcodeId = qrcodeId;
         this.canvasId = canvasId;
@@ -19,7 +24,7 @@ export class Poster {
      */
     sharePoster() {
         this._setScroll2Top();
-        if (environment.qrcode) {
+        if (this.isMakeQRCode) {
             QRCodeFactory.makeQRCode(this.qrcodeId);
         }
         html2canvas(document.getElementById(this.canvasId), {
@@ -28,6 +33,15 @@ export class Poster {
         }).then(canvas => {
             this._downloadFile(this._packagePictureInfo(canvas.toDataURL('image/png')));
         });
+    }
+
+
+    /**
+     * 设置是否生成二维码
+     */
+    setMakeQRCode(isMake: boolean) {
+        this.isMakeQRCode = isMake;
+        return this;
     }
 
     /**

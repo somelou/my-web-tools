@@ -1,5 +1,5 @@
 <div id="poster" class="background" (click)="showFullScreen()">
-  <div *ngIf="water" class="water">
+  <div *ngIf="mark" class="water">
     <span>@somelou</span>
   </div>
   <app-dark-yellow-dot></app-dark-yellow-dot>
@@ -35,7 +35,7 @@
       <div class="extra-bar" [ngStyle]="{'padding-bottom': haveMedia ? '0':'8%'}">
         <span class="decorate">/////</span>
       </div>
-      <div *ngIf="isShowQrcode" class="qrcode-bar">
+      <div *ngIf="uri && uri.length !== 0" class="qrcode-bar">
         <div class="caption">
           <span class="description-content">长按扫码</span>
           <span class="description-content">查看详情</span>

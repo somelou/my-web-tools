@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { JikePostPojo } from 'src/app/entity/jike-post';
 import { Poster } from 'src/app/utils/Poster';
 
@@ -7,7 +7,7 @@ import { Poster } from 'src/app/utils/Poster';
   templateUrl: './jike-input-form.component.html',
   styleUrls: ['./jike-input-form.component.scss']
 })
-export class JikeInputFormComponent implements OnInit {
+export class JikeInputFormComponent implements OnInit, OnChanges {
 
   // tslint:disable-next-line: variable-name
   private _value: JikePostPojo;
@@ -22,6 +22,10 @@ export class JikeInputFormComponent implements OnInit {
   @Output()
   valueChange = new EventEmitter<JikePostPojo>();
 
+  @Input()
+  uri: string;
+  isShowQrcode: boolean;
+
   canvasId = 'poster';
   qrcodeId = 'qrcode';
 
@@ -30,9 +34,15 @@ export class JikeInputFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.uri) {
+      this.isShowQrcode = changes.uri.currentValue && changes.uri.currentValue !== 0;
+    }
+  }
+
   sharePoster() {
     const poster = new Poster(this.canvasId, this.qrcodeId);
-    poster.sharePoster();
+    poster.setMakeQRCode(this.isShowQrcode).sharePoster();
   }
 
   avatarImageChange($event: string) {

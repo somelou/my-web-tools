@@ -24,6 +24,8 @@ import { JikeItemIntervalComponent } from './components/jike-item-interval/jike-
 import { UploadPictureComponent } from './components/upload-picture/upload-picture.component';
 import { CropperMaskComponent } from './components/cropper-mask/cropper-mask.component';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+import { JikePostProFormComponent } from './components/jike-post-pro-form/jike-post-pro-form.component';
+import { Subject } from 'rxjs';
 
 
 registerLocaleData(zh);
@@ -35,6 +37,7 @@ const JikeCardComponents = [
   JikePostItemComponent, QrcodeComponent, DarkYellowDotComponent,
   JikeItemIntervalComponent,
   JikeInputFormComponent, UploadPictureComponent, OperateBarComponent,
+  JikePostProFormComponent,
   JikeFooterComponent,
   CropperMaskComponent
 ];
@@ -65,7 +68,8 @@ const JikeCardComponents = [
     {
       provide: MATERIAL_SANITY_CHECKS,
       useValue: false
-    }
+    },
+    Subject
   ],
   bootstrap: [AppComponent]
 })
