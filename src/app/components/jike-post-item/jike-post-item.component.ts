@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { JikePostPojo } from 'src/app/entity/jike-post';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +13,7 @@ const JIKE_CARD_TYPE = {
   templateUrl: './jike-post-item.component.html',
   styleUrls: ['./jike-post-item.component.scss']
 })
-export class JikePostItemComponent implements OnInit, OnChanges {
+export class JikePostItemComponent implements OnInit {
 
   canvasId = 'poster';
   qrcodeId = 'qrcode';
@@ -28,7 +28,6 @@ export class JikePostItemComponent implements OnInit, OnChanges {
   @Input()
   value: JikePostPojo;
 
-  haveMedia = false;
   thisYear: boolean; // 发布时间（年的判断）
 
   cardType: string; // 动态｜评论
@@ -45,13 +44,6 @@ export class JikePostItemComponent implements OnInit, OnChanges {
     this.setCardType();
     this.setContentFontSize();
     this.thisYear = this.isThisYearPost(this.value.createdAt);
-    // this.haveMedia = this.isHaveMedia();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.value) {
-      console.log(changes.value);
-    }
   }
 
   setCardType() {

@@ -4,11 +4,11 @@
     <label class="extra-info">取消👍可以关闭此选项</label>
   </div>
   <div class="jike-form-label">
-    <label>动态/评论ID</label>
-    <label class="extra-info">清空内容后不显示二维码</label>
+    <label>动态链接/ID</label>
+    <label class="extra-info">清空后不显示二维码</label>
   </div>
   <nz-input-group [nzSuffix]="suffixTemplate">
-    <input class="jike-text-input" nz-input placeholder="输入完整url或者仅id" [ngModel]="value"
+    <input class="jike-text-input" nz-input placeholder="输入完整url或者动态id" [ngModel]="value"
       (ngModelChange)="inputChange($event)" nzSize="large">
   </nz-input-group>
   <ng-template #suffixTemplate
