@@ -21,7 +21,7 @@
     </div>
 
     <div *ngIf="value.pictures.length !== 0">
-      <img [src]="sanitizer.bypassSecurityTrustUrl(value.pictures[0].picUrl)" style="width: 100%; object-fit: scale-down;">
+      <img [src]="sanitizer.bypassSecurityTrustUrl(value.pictures[0].picUrl)" style="width: 100%; object-fit: contain;">
     </div>
     <div style="padding: 0 6.5%;">
       <div class="time-bar">
@@ -29,8 +29,8 @@
         <span *ngIf="!thisYear" class="description-content">{{ value.createdAt | date: 'yyyy/MM/dd' }}</span>
       </div>
       <div class="content-bar">
-        <span *ngIf="haveMedia" class="content" style="font-size: 1rem;">{{ value.content }}</span>
-        <span *ngIf="!haveMedia" [ngStyle]="{'font-size': 'contentFontSize'}" class="content">{{ value.content }}</span>
+        <span *ngIf="isHaveMedia" class="content" style="font-size: 1rem;">{{ value.content }}</span>
+        <span *ngIf="!isHaveMedia" [ngStyle]="{'font-size': 'contentFontSize'}" class="content">{{ value.content }}</span>
       </div>
       <div class="extra-bar" [ngStyle]="{'padding-bottom': haveMedia ? '0':'8%'}">
         <span class="decorate">/////</span>

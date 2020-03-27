@@ -29,6 +29,9 @@ export class JikeInputFormComponent implements OnInit, OnChanges {
   canvasId = 'poster';
   qrcodeId = 'qrcode';
 
+  avatarFormats = ['image/png', 'image/jpeg'];
+  pictureFormates = [...this.avatarFormats, 'image/gif'];
+
   constructor() { }
 
   ngOnInit() {

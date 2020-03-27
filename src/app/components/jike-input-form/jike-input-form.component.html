@@ -19,14 +19,14 @@
       <div class="jike-form-label">
         <label>选择头像</label>
       </div>
-      <app-upload-picture label="选择头像" [crop]="true" (urlChange)="avatarImageChange($event)"></app-upload-picture>
+      <app-upload-picture label="选择头像" [formats]="avatarFormats" [crop]="true" (urlChange)="avatarImageChange($event)"></app-upload-picture>
     </div>
     <div class="right-column">
       <div class="jike-form-label">
         <label>动态图片</label>
         <label class="extra-info">可选</label>
       </div>
-      <app-upload-picture label="添加图片" [crop]="false" (urlChange)="contentPictureChange($event)"></app-upload-picture>
+      <app-upload-picture label="添加图片" [formats]="pictureFormates" [crop]="false" (urlChange)="contentPictureChange($event)"></app-upload-picture>
     </div>
   </div>
   <div class="double-column">

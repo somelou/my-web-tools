@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { JikePostPojo } from 'src/app/entity/jike-post';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +13,7 @@ const JIKE_CARD_TYPE = {
   templateUrl: './jike-post-item.component.html',
   styleUrls: ['./jike-post-item.component.scss']
 })
-export class JikePostItemComponent implements OnInit {
+export class JikePostItemComponent implements OnInit, OnChanges {
 
   canvasId = 'poster';
   qrcodeId = 'qrcode';
@@ -45,7 +45,13 @@ export class JikePostItemComponent implements OnInit {
     this.setCardType();
     this.setContentFontSize();
     this.thisYear = this.isThisYearPost(this.value.createdAt);
-    this.haveMedia = this.isHaveMedia();
+    // this.haveMedia = this.isHaveMedia();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.value) {
+      console.log(changes.value);
+    }
   }
 
   setCardType() {
@@ -66,7 +72,7 @@ export class JikePostItemComponent implements OnInit {
     return new Date().getFullYear() === new Date(createdAt).getFullYear();
   }
 
-  isHaveMedia() {
+  get isHaveMedia() {
     if (this.value.pictures.length !== 0) {
       return true;
     }

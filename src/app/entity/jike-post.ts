@@ -29,4 +29,5 @@ interface JikeUserPojo {
 
 interface JikeImagePojo {
     picUrl: string;
+    format?: string;
 }

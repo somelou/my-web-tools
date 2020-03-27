@@ -15,6 +15,9 @@ export class UploadPictureComponent implements OnInit {
   urlChange = new EventEmitter<string>();
 
   @Input()
+  formats: string[];
+
+  @Input()
   crop: boolean; // 是否需要裁切
 
   @Input()
@@ -31,10 +34,10 @@ export class UploadPictureComponent implements OnInit {
     {
       name: 'type',
       fn: (fileList: UploadFile[]) => {
-        // const filterFiles = fileList.filter(w => ~['image/png', 'image/jpeg'].indexOf(w.type));
-        const filterFiles = fileList;
+        // tslint:disable-next-line: no-bitwise
+        const filterFiles = fileList.filter(w => ~this.formats.indexOf(w.type));
         if (filterFiles.length !== fileList.length) {
-          this.snackBar.open('不是常用的图片格式🔫', '知道了', {
+          this.snackBar.open('不是合法的图片格式🔫', '知道了', {
             duration: 2000
           });
           return filterFiles;
