@@ -1,18 +1,33 @@
-span {
-  color: #b0b0b0;
-  margin: 4px;
-  font-size: 1em;
-  white-space: nowrap;
+.item-interval {
+  font-weight: normal;
+  text-align: center;
+  padding-top: 10px;
+  position: relative;
 }
 
-.item-interval {
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
+.item-interval::before {
+  content: "";
+  display: block;
+  width: 60vw;
+  height: 1px;
+  background: #b0b0b0;
+  position: absolute;
+  left: 50%;
+  margin-left: -30vw;
+  top: 18px;
+}
+
+.item-interval span {
+  padding: 0 8px;
+  color: #b0b0b0;
+  background-color: black;
+  position: relative;
+  white-space: nowrap;
+  font-size: 1em !important;
 }
 
 @media screen and (max-width: 768px) {
   span {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
   }
 }

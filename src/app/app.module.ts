@@ -25,7 +25,7 @@ import { UploadPictureComponent } from './components/upload-picture/upload-pictu
 import { CropperMaskComponent } from './components/cropper-mask/cropper-mask.component';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 import { JikePostProFormComponent } from './components/jike-post-pro-form/jike-post-pro-form.component';
-import { Subject } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 
 registerLocaleData(zh);
@@ -48,6 +48,7 @@ const JikeCardComponents = [
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     HttpClientModule,
     QRCodeModule,
@@ -68,8 +69,7 @@ const JikeCardComponents = [
     {
       provide: MATERIAL_SANITY_CHECKS,
       useValue: false
-    },
-    Subject
+    }
   ],
   bootstrap: [AppComponent]
 })

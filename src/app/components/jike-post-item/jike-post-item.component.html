@@ -32,7 +32,7 @@
         <span *ngIf="isHaveMedia" class="content" style="font-size: 1rem;">{{ value.content }}</span>
         <span *ngIf="!isHaveMedia" [ngStyle]="{'font-size': 'contentFontSize'}" class="content">{{ value.content }}</span>
       </div>
-      <div class="extra-bar" [ngStyle]="{'padding-bottom': haveMedia ? '0':'8%'}">
+      <div class="extra-bar" [ngStyle]="{'padding-bottom': isHaveMedia ? '0':'8%'}">
         <span class="decorate">/////</span>
       </div>
       <div *ngIf="uri && uri.length !== 0" class="qrcode-bar">

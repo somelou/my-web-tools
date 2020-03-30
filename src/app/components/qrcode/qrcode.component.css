@@ -3,3 +3,8 @@
   stroke-width: 0.1;
   stroke-linejoin: bevel;
 }
+
+:host ::ng-deep img {
+  width: fit-content;
+  width: -webkit-fill-available;
+}

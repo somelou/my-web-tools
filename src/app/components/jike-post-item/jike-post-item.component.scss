@@ -8,7 +8,6 @@
 
 .description-content {
   font-size: 0.6rem;
-  transform: scale(0.95);
   transform-origin: 0 0;
   color: #BDBDBD;
 }
@@ -73,7 +72,7 @@
   text-align: left;
 
   .content {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     white-space: pre-wrap;
     color: black;
   }
@@ -98,6 +97,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 
   .caption {
     display: flex;
@@ -108,6 +108,8 @@
   .qrcode {
     margin: 5% 0 5% 5%;
     width: 18%;
+    min-width: 50px;
+    position: sticky;
   }
 }
 

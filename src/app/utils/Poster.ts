@@ -29,7 +29,7 @@ export class Poster {
         }
         html2canvas(document.getElementById(this.canvasId), {
             useCORS: true,
-            height: document.getElementById(this.canvasId).scrollHeight
+            height: document.getElementById(this.canvasId).offsetHeight
         }).then(canvas => {
             this._downloadFile(this._packagePictureInfo(canvas.toDataURL('image/png')));
         });
