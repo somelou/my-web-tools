@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { browserIsiPhone } from 'src/app/utils/browser';
 
 @Component({
   selector: 'app-qrcode',
@@ -14,10 +15,13 @@ export class QrcodeComponent implements OnInit, OnChanges {
 
   uri: string;
 
+  isSvg: boolean;
+
   constructor() { }
 
   ngOnInit() {
     this.uri = this._getUri(this.data);
+    this.isSvg = !browserIsiPhone();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
