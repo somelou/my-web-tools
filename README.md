@@ -4,7 +4,7 @@
 
 填入数据,即刻拥有!
 
-**你可以[web.somelou.xyz](https://web.somelou.xyz/jike/card)查看效果**
+**你可以[somelou.xyz](https://card.jike.somelou.xyz/jike/card)查看效果**
 
 ## 项目说明
 
